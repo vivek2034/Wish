@@ -72,7 +72,7 @@ export const generateManifestationText = async (desire: string): Promise<Manifes
   }
 
   // FALLBACK: Use Client-Side SDK
-  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY as string;
   if (!apiKey) throw new Error("Missing Gemini API Key");
 
   const ai = new GoogleGenAI({ apiKey });
@@ -126,7 +126,7 @@ export const generateAffirmationAudio = async (text: string): Promise<AudioBuffe
 
   // FALLBACK: Use Client-Side SDK if we didn't get audio from the API
   if (!base64Audio) {
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY as string;
     if (!apiKey) throw new Error("Missing Gemini API Key");
 
     const ai = new GoogleGenAI({ apiKey });
