@@ -101,7 +101,13 @@ const apiKey = import.meta.env.VITE_GEMINI_API_KEY as string;
     }
   });
 
-  return JSON.parse(response.text);
+  const text = response.text;
+if (!text) {
+  throw new Error("Gemini did not return text");
+}
+
+return JSON.parse(text);
+
 };
 
 export const generateAffirmationAudio = async (text: string): Promise<AudioBuffer> => {
