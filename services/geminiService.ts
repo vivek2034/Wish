@@ -72,15 +72,15 @@ export const generateManifestationText = async (desire: string): Promise<Manifes
   }
 
   // FALLBACK: Use Client-Side SDK
-  if (!process.env.API_KEY) {
-    throw new Error("No API key found in the environment.");
-  }
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  if (!apiKey) throw new Error("Missing Gemini API Key");
 
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey });
+
   const response = await ai.models.generateContent({
     model: "gemini-3-flash-preview",
     contents: `The user desires to manifest: "${desire}". 
-    Act as a spiritual manifestation coach. 
+    Act as a spiritual manifestation coach.
     Create a personalized manifestation plan containing:
     1. 5 powerful, unique, and creative present-tense 'I am' affirmations.
     2. A 'scripting' journal entry (approx 80-100 words) written in the present tense as if the desire has already manifested.
@@ -126,8 +126,10 @@ export const generateAffirmationAudio = async (text: string): Promise<AudioBuffe
 
   // FALLBACK: Use Client-Side SDK if we didn't get audio from the API
   if (!base64Audio) {
-    if (!process.env.API_KEY) throw new Error("No API key found.");
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+    if (!apiKey) throw new Error("Missing Gemini API Key");
+
+    const ai = new GoogleGenAI({ apiKey });
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-preview-tts",
       contents: [{ parts: [{ text: `Repeat after me. ${text}` }] }],
