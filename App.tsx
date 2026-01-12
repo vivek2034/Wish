@@ -78,7 +78,7 @@ export default function App() {
              <div className="absolute inset-0 rounded-full border border-indigo-500/30 animate-[ping_3s_linear_infinite]"></div>
              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-indigo-600 to-amber-400 p-0.5 shadow-[0_0_50px_rgba(139,92,246,0.5)]">
                 <div className="w-full h-full rounded-full bg-[#0f0c29] flex items-center justify-center">
-                   <Sparkles className="w-10 h-10 text-white animate-pulse" />
+                   <img src="https://github.com/vivek2034/WISH-THEORY/blob/main/assets/logo.png?raw=true" alt="Wish Theory Logo"/>
                 </div>
              </div>
           </div>
@@ -97,7 +97,7 @@ export default function App() {
       <nav className="relative z-20 flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
         <div className="flex items-center gap-2 group cursor-pointer" onClick={() => setAppState(AppState.IDLE)}>
            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 to-amber-300 flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-white" />
+              <img src="https://github.com/vivek2034/WISH-THEORY/blob/main/assets/logo.png?raw=true" alt="Wish Theory Logo"/>
            </div>
            <h1 className="text-2xl font-serif font-bold tracking-widest text-white">WISH THEORY</h1>
         </div>
