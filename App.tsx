@@ -96,7 +96,7 @@ export default function App() {
       <StarField />
       <nav className="relative z-20 flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
         <div className="flex items-center gap-2 group cursor-pointer" onClick={() => setAppState(AppState.IDLE)}>
-           <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 to-amber-300 flex items-center justify-center">
+           <div className="w-8 h-8 rounded-full bg-[#0f0c29] from-indigo-500 to-amber-300 flex items-center justify-center">
               <img src="https://github.com/vivek2034/WISH-THEORY/blob/main/assets/logo.png?raw=true" alt="Wish Theory Logo"/>
            </div>
            <h1 className="text-2xl font-serif font-bold tracking-widest text-white">WISH THEORY</h1>
