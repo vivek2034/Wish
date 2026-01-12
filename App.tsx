@@ -154,7 +154,7 @@ export default function App() {
           <div className="flex flex-col items-center gap-6">
              <div className="relative w-24 h-24">
                 <div className="absolute inset-0 rounded-full border-t-2 border-indigo-400 animate-spin"></div>
-                <Sparkles className="absolute inset-0 m-auto w-6 h-6 text-white animate-pulse" />
+                <img src="https://github.com/vivek2034/WISH-THEORY/blob/main/assets/logo.png?raw=true" alt="Wish Theory Logo"/>
              </div>
              <div className="text-center space-y-2">
                 <p className="text-indigo-200 font-serif text-2xl animate-pulse">
